@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+body {
+  background-color: rgb(43, 43, 181);
+  padding-top: 20px;
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(4, 4, 65);
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  height: 400px;
+  border-radius: 20px 0px 20px 0px;
+}
+body .inputs input {
+  width: 80%;
+  height: 55px;
+  border: 2px solid #fff;
+  border-radius: 20px 0px 20px 0px;
+  font-size: 1.3rem;
+  padding: 10px;
+  outline: none;
+  background: none;
+  color: #fff;
+}
+body .inputs input::-moz-placeholder {
+  color: #fff;
+}
+body .inputs input:-ms-input-placeholder {
+  color: #fff;
+}
+body .inputs input::placeholder {
+  color: #fff;
+}
+body .inputs input::-moz-selection {
+  outline: none;
+}
+body .inputs input::selection {
+  outline: none;
+}
+body .inputs button {
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.6s ease-in-out;
+}
+body .inputs button.botao-envio {
+  width: 300px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: rgb(5, 5, 122);
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.5);
+}
+body .inputs button.botao-envio:hover {
+  background-color: rgb(14, 16, 93);
+}
+body #table {
+  margin-top: 30px;
+  border-radius: 20px;
+  width: 80%;
+}
+body #table tbody tr {
+  position: relative;
+}
+body #table tbody tr .deletar {
+  position: absolute;
+  right: 10px;
+  top: -1px;
+  transition: all 0.6s ease-in-out;
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+  color: #fff;
+  height: 40px;
+  width: 40px;
+}
+body #table tbody tr .deletar:hover {
+  color: red;
+}/*# sourceMappingURL=style.css.map */
