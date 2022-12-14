@@ -3,14 +3,51 @@ body {
   background-color: rgb(43, 43, 181);
   padding-top: 20px;
   font-family: "Rubik", sans-serif;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+body .theader {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body .theader .area-th {
+  position: relative;
+}
+body .theader .area-th input {
+  border: 2px solid #fff;
+  border-radius: 20px 0px 20px 0px;
+  font-size: 1.3rem;
+  padding: 10px;
+  outline: none;
+  background: none;
+  color: #fff;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+body .theader .area-th .botao-plus {
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+  background: none;
+  color: rgb(32, 229, 32);
+  position: absolute;
+  right: 5px;
+  top: 20px;
+}
+body .theader .area-th .botao-plus:hover {
+  color: rgb(5, 5, 122);
 }
 body .inputs {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 18px;
   justify-content: space-around;
   background-color: rgb(4, 4, 65);
   box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.5);
@@ -19,8 +56,6 @@ body .inputs {
   border-radius: 20px 0px 20px 0px;
 }
 body .inputs input {
-  width: 80%;
-  height: 55px;
   border: 2px solid #fff;
   border-radius: 20px 0px 20px 0px;
   font-size: 1.3rem;
@@ -28,6 +63,8 @@ body .inputs input {
   outline: none;
   background: none;
   color: #fff;
+  width: 80%;
+  height: 55px;
 }
 body .inputs input::-moz-placeholder {
   color: #fff;
@@ -48,8 +85,8 @@ body .inputs button {
   outline: none;
   border: none;
   font-size: 1.2rem;
-  padding: 10px;
   cursor: pointer;
+  padding: 10px;
   color: #fff;
   transition: all 0.6s ease-in-out;
 }
@@ -65,8 +102,8 @@ body .inputs button.botao-envio:hover {
 }
 body #table {
   margin-top: 30px;
-  border-radius: 20px;
   width: 80%;
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.5);
 }
 body #table tbody tr {
   position: relative;
@@ -79,8 +116,8 @@ body #table tbody tr .deletar {
   outline: none;
   border: none;
   font-size: 1.2rem;
-  padding: 10px;
   cursor: pointer;
+  padding: 10px;
   background: none;
   color: #fff;
   height: 40px;

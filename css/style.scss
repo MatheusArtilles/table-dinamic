@@ -4,10 +4,37 @@
 body {
     background-color: $azul-bg;
     padding-top: 20px;
-    font-family: $fonte-project; 
+    font-family: $fonte-project;
+    color: #fff; 
     @include mixins.column;
+    .theader {
+        width: 80%;
+        @include mixins.flex;
+        .area-th {
+            position: relative;
+            input {
+                @include mixins.inputs;
+                margin-top: 10px;
+                margin-left: 5px;
+            }
+            .botao-plus {
+                @include mixins.btn;
+                transition: all .6s ease-in-out;
+                background: none;
+                color: $verde;
+                position: absolute;
+                right: 5px;
+                top: 20px;
+                &:hover {
+                    color: $azul-btn;
+                }
+            }
+        }
+        
+    }
     .inputs {
         @include mixins.column;
+        margin-top: 18px;
         justify-content: space-around;
         background-color: $azul-inputs;
         box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.5);
@@ -16,7 +43,8 @@ body {
         border-radius: 20px 0px 20px 0px;
         input {
             @include mixins.inputs;
-            
+            width: 80%;
+            height: 55px;
             &::placeholder {
                 color: #fff;
             }
@@ -26,6 +54,7 @@ body {
         }
         button {
             @include mixins.btn;
+            padding: 10px;
             color: #fff;
             transition: all .6s ease-in-out;
             &.botao-envio {
@@ -42,8 +71,8 @@ body {
     }
     #table {
         margin-top: 30px;
-        border-radius: 20px;
         width: 80%;
+        box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.5);
         tbody {
             tr {
                 position: relative;
@@ -53,6 +82,7 @@ body {
                     top: -1px;
                     transition: all .6s ease-in-out;
                     @include mixins.btn;
+                    padding: 10px;
                     background: none;
                     color: #fff;
                     height: 40px;

@@ -19,7 +19,7 @@ function adicionaProduto(){
     let id = geraId();
     let lista = [id, prod.value, valor.value, qtd.value];
     if(prod.value == '' || valor.value == '' || qtd.value == ''){
-        alert('Insira um valor');
+        alert('Recomenda-se passar os dados para as linhas');
     } else {
         let tr = document.createElement('tr');
         table.appendChild(tr);
@@ -40,6 +40,7 @@ function adicionaProduto(){
     }
 }
 btn.addEventListener("click", adicionaProduto);
+
 document.addEventListener('keypress', (e) =>{
     if(e.key == 'Enter'){
         return adicionaProduto();

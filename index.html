@@ -10,27 +10,53 @@
     crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/c600d5d8fe.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>To-do list</title>
+    <title>Tabela</title>
 </head>
 <body>
+    <h1>Painel da Tabela</h1>
+    <h3>Colunas</h3>
+    <section class="theader">
+        <div class="area-th">
+            <input onfocus="testaTeclaEnter('col-1', '1')" id="col-1" type="text"  placeholder="coluna 1">
+            <button onclick="adicionarNomeCol('col-1', '1')" class="botao-plus">
+                <i class="fa-solid fa-circle-plus"></i>
+            </button>
+        </div>
+        <div class="area-th">
+            <input onfocus="testaTeclaEnter('col-2', '2')" id="col-2" type="text" placeholder="coluna 2">
+            <button onclick="adicionarNomeCol('col-2', '2')" class="botao-plus">
+                <i class="fa-solid fa-circle-plus"></i>
+            </button>
+        </div>
+        <div class="area-th">
+            <input onfocus="testaTeclaEnter('col-3', '3')" id="col-3" type="text" placeholder="coluna 3">
+            <button onclick="adicionarNomeCol('col-3', '3')" class="botao-plus">
+                <i class="fa-solid fa-circle-plus"></i>
+            </button>
+        </div>
+        
+        
+    </section>
     <section class="inputs">
-        <input id="produto" type="text" placeholder="Produto">
-        <input id="valor" type="text" placeholder="Valor">
-        <input id="qtd" type="text" placeholder="Quantidade">
+        <h3>Dados</h3>
+        <input id="produto" type="text" placeholder="campo 1">
+        <input id="valor" type="text" placeholder=" campo 2">
+        <input id="qtd" type="text" placeholder="campo 3">
         <button class="botao-envio" id="enviar">Adicionar</button>
     </section>
     <table id="table" class="table table-dark "><!--table-striped-->
         <thead>
             <th>ID</th>
-            <th>Produto</th>
-            <th>Valor</th>
-            <th>Quantidade</th>
+            <th id="1">COL 1</th>
+            <th id="2">COL 2</th>
+            <th id="3">COL 3</th>
         </thead>
         <tbody>
             
         </tbody>
     </table>
-    <script src="./js/app.js"></script>
     
+    <script src="./js/app.js"></script>
+    <script src="./js/column.js"></script>
 </body>
 </html>
