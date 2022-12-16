@@ -1,11 +1,11 @@
+let table = document.querySelector('tbody');
+let btn = document.getElementById('enviar');
+let campoUm = document.getElementById('camp1');
+let campoDois = document.getElementById('camp2');
+let campoTres = document.getElementById('camp3');
 function geraId(){
     return Math.floor(Math.random() * 300);
 }
-let table = document.querySelector('tbody');
-let btn = document.getElementById('enviar');
-let prod = document.getElementById('produto');
-let valor = document.getElementById('valor');
-let qtd = document.getElementById('qtd');
 function excluir(linhaid){
     let confirmacao = window.confirm('Quer mesmo excluir?');
     if(confirmacao){
@@ -15,28 +15,44 @@ function excluir(linhaid){
         }
     }
 }
-function adicionaProduto(){
+function criaLista(){
     let id = geraId();
-    let lista = [id, prod.value, valor.value, qtd.value];
-    if(prod.value == '' || valor.value == '' || qtd.value == ''){
+    let lista = [id, campoUm.value, campoDois.value, campoTres.value];
+    return lista;
+}
+function criaBtn(){
+    let btn_delete = document.createElement('button');
+    btn_delete.classList.add('deletar');
+    btn_delete.innerHTML = '<i class="fa-solid fa-trash"></i>'
+    return btn_delete;
+}
+function criaTr(tabela){
+    let tr = document.createElement('tr');
+    tabela.appendChild(tr);
+    return tr;
+}
+function zeraInputs(){
+    let args = [].slice.call(arguments, 0);
+    for(let i = 0; i < args.length; i++) {
+        args[i].value = '';
+    }
+}
+function adicionaProduto(){
+    let lista = criaLista();
+    if(lista.includes('')){
         alert('Recomenda-se passar os dados para as linhas');
     } else {
-        let tr = document.createElement('tr');
-        table.appendChild(tr);
+        let tr = criaTr(table);
         for(let i = 0; i < lista.length; i++){
             let td = document.createElement('td')
             tr.appendChild(td);
             td.innerHTML = lista[i];
         }
         tr.id = lista[0];
-        let btn_delete = document.createElement('button');
-        btn_delete.classList.add('deletar');
-        btn_delete.innerHTML = '<i class="fa-solid fa-trash"></i>'
+        let btn_delete = criaBtn();
         btn_delete.setAttribute('onclick', 'excluir('+ tr.id +')')
         tr.appendChild(btn_delete);
-        prod.value = '';
-        valor.value = '';
-        qtd.value = '';
+        zeraInputs(campoUm, campoDois, campoTres);
     }
 }
 btn.addEventListener("click", adicionaProduto);
