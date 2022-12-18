@@ -5,7 +5,8 @@ body {
     background-color: $azul-bg;
     padding-top: 20px;
     font-family: $fonte-project;
-    color: #fff; 
+    color: $branco;
+    padding-bottom: 15px; 
     @include mixins.column;
     .theader {
         width: 80%;
@@ -16,6 +17,9 @@ body {
                 @include mixins.inputs;
                 margin-top: 10px;
                 margin-left: 5px;
+                &::placeholder {
+                    color: $branco;
+                }
             }
             .botao-plus {
                 @include mixins.btn;
@@ -46,7 +50,7 @@ body {
             width: 80%;
             height: 55px;
             &::placeholder {
-                color: #fff;
+                color: $branco;
             }
             &::selection {
                 outline: none;
@@ -55,7 +59,7 @@ body {
         button {
             @include mixins.btn;
             padding: 10px;
-            color: #fff;
+            color: $branco;
             transition: all .6s ease-in-out;
             &.botao-envio {
                 width: 300px;
@@ -84,7 +88,7 @@ body {
                     @include mixins.btn;
                     padding: 10px;
                     background: none;
-                    color: #fff;
+                    color: $branco;
                     height: 40px;
                     width: 40px;
                     &:hover {
@@ -93,6 +97,25 @@ body {
                 }
             }
             
+        }
+    }
+    .area-download {
+        margin-top: 20px;
+        padding-bottom: 10px;
+        .botao-download { 
+            @include mixins.btn;
+            text-decoration: none;
+            transition: all .6s ease-in-out;
+            color: $branco;
+            background-color: $verde;
+            border-radius: 20px;
+            padding: 20px;
+            width: 100px;
+            height: 50px;
+            &:hover {
+                box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.5);
+                background-color: $azul-bg-hover;
+            }
         }
     }
 }

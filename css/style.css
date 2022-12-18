@@ -4,6 +4,7 @@ body {
   padding-top: 20px;
   font-family: "Rubik", sans-serif;
   color: #fff;
+  padding-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +28,15 @@ body .theader .area-th input {
   color: #fff;
   margin-top: 10px;
   margin-left: 5px;
+}
+body .theader .area-th input::-moz-placeholder {
+  color: #fff;
+}
+body .theader .area-th input:-ms-input-placeholder {
+  color: #fff;
+}
+body .theader .area-th input::placeholder {
+  color: #fff;
 }
 body .theader .area-th .botao-plus {
   outline: none;
@@ -125,4 +135,26 @@ body #table tbody tr .deletar {
 }
 body #table tbody tr .deletar:hover {
   color: red;
+}
+body .area-download {
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+body .area-download .botao-download {
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.6s ease-in-out;
+  color: #fff;
+  background-color: rgb(32, 229, 32);
+  border-radius: 20px;
+  padding: 20px;
+  width: 100px;
+  height: 50px;
+}
+body .area-download .botao-download:hover {
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.5);
+  background-color: rgb(14, 16, 93);
 }/*# sourceMappingURL=style.css.map */

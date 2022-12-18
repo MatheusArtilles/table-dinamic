@@ -1,10 +1,9 @@
 function adicionarNomeCol(nomeCol, col){
-    let nome_col = document.getElementById(`${nomeCol}`).value;
+    let nome_col = document.getElementById(`${nomeCol}`);
+    let valor = nome_col.value;
     let colun = document.getElementById(`${col}`);
-    if(nome_col == ''){
-        //console.log('A coluna precisa de um Nome');
-    } else {
-        colun.innerHTML = nome_col;
+    if(valor != ''){
+        colun.innerHTML = valor;
     }
 }
 function testaTeclaEnter(nomeCol, col) {

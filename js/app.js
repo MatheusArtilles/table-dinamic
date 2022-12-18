@@ -1,8 +1,9 @@
 let table = document.querySelector('tbody');
 let btn = document.getElementById('enviar');
-let campoUm = document.getElementById('camp1');
-let campoDois = document.getElementById('camp2');
-let campoTres = document.getElementById('camp3');
+let th = document.querySelectorAll('th');
+let cp = document.querySelectorAll('.cp');
+
+const list_ = Array.from(cp);
 function geraId(){
     return Math.floor(Math.random() * 300);
 }
@@ -17,7 +18,10 @@ function excluir(linhaid){
 }
 function criaLista(){
     let id = geraId();
-    let lista = [id, campoUm.value, campoDois.value, campoTres.value];
+    let lista = [id];
+    for(let count = 0; count < list_.length; count++){
+        lista.push(list_[count].value);
+    }
     return lista;
 }
 function criaBtn(){
@@ -31,11 +35,10 @@ function criaTr(tabela){
     tabela.appendChild(tr);
     return tr;
 }
-function zeraInputs(){
-    let args = [].slice.call(arguments, 0);
-    for(let i = 0; i < args.length; i++) {
-        args[i].value = '';
-    }
+function zeraInputs(lista){
+   for(let i = 0; i < lista.length; i++){
+        lista[i].value = '';
+   }
 }
 function adicionaProduto(){
     let lista = criaLista();
@@ -43,7 +46,7 @@ function adicionaProduto(){
         alert('Recomenda-se passar os dados para as linhas');
     } else {
         let tr = criaTr(table);
-        for(let i = 0; i < lista.length; i++){
+        for(let i = 0; i < th.length; i++){
             let td = document.createElement('td')
             tr.appendChild(td);
             td.innerHTML = lista[i];
@@ -52,7 +55,7 @@ function adicionaProduto(){
         let btn_delete = criaBtn();
         btn_delete.setAttribute('onclick', 'excluir('+ tr.id +')')
         tr.appendChild(btn_delete);
-        zeraInputs(campoUm, campoDois, campoTres);
+        zeraInputs(list_);
     }
 }
 btn.addEventListener("click", adicionaProduto);
@@ -62,3 +65,4 @@ document.addEventListener('keypress', (e) =>{
         return adicionaProduto();
     }
 })
+
